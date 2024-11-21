@@ -1,0 +1,111 @@
+/**
+ * MKWA Fitness Public Styles
+ */
+
+/* Analytics Dashboard Layout */
+.mkwa-analytics-dashboard {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Chart Container Styling */
+.mkwa-chart-container {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 2em;
+    padding: 1.5em;
+    position: relative;
+}
+
+.mkwa-chart-container canvas {
+    min-height: 300px;
+}
+
+/* Chart Controls */
+.mkwa-chart-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.mkwa-chart-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #24292e;
+    margin: 0;
+}
+
+/* Analytics Metrics Grid */
+.mkwa-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+
+.mkwa-metric-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1em;
+}
+
+.mkwa-metric-value {
+    font-size: 2em;
+    font-weight: 600;
+    color: #24292e;
+    margin: 0.2em 0;
+}
+
+.mkwa-metric-label {
+    color: #6a737d;
+    font-size: 0.9em;
+}
+
+/* Loading States */
+.mkwa-loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.mkwa-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid #e1e4e8;
+    border-top-color: #4e73df;
+    border-radius: 50%;
+    animation: mkwa-spin 0.6s linear infinite;
+}
+
+@keyframes mkwa-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .mkwa-analytics-dashboard {
+        padding: 10px;
+    }
+    
+    .mkwa-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mkwa-chart-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+    }
+}
